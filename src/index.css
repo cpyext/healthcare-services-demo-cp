@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-arial;
+  }
+  :root {
+    --yxt-base-spacing: 20px;
+    --spacing-base: 20px;
+    --theme-primary: white;
+    --theme-secondary: #7364D8;
+    --theme-tertiary: #7364D8;
+    --theme-accent: #f7f7f7;
+  }
+}
+
+abbr {
+  @apply !no-underline;
+}
+
+.centered-container {
+  @apply mx-auto py-8 px-6 md:px-36 md:py-16 w-full max-w-[1440px] space-y-8 md:space-y-12;
+}
+
+.section {
+  @apply mt-8 mb-16;
+}
+
+/* Cards Config*/
+.cards {
+  @apply border-b last:border-b-0 p-[calc(var(--yxt-base-spacing)*0.75)_var(--yxt-base-spacing)];
+}
+
+/* Carousel*/
+.slider .x {
+  box-sizing: border-box;
+}
+
+.slick-prev {
+  @apply !left-[5px];
+}
+.slick-next {
+  @apply !right-[5px] md:!right-6;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: var(--color-text-primary) !important;
+}
+
+.HoursTable-row {
+  @apply flex gap-16 my-1;
+}
+
+.HoursTable-day {
+  @apply w-12;
+}

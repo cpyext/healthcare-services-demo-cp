@@ -1,0 +1,65 @@
+{
+  "name": "financial-services-demo",
+  "version": "0.0.0",
+  "description": "An example repository to help users get started with React development on Yext Pages",
+  "author": "sumo@yext.com",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "scripts": {
+    "dev": "pages dev",
+    "prod": "pages prod",
+    "build:local": "pages build",
+    "generate-notices": "generate-license-file --input package.json --output ./THIRD-PARTY-NOTICES --overwrite",
+    "clean": "rm -rf .artifact-output .yext/ dist/ localData sites-rendered-output",
+    "features": "pages generate features"
+  },
+  "engines": {
+    "node": "^18.4.0 || >=20.2.0"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/react-slick": "^0.23.13",
+    "@yext/chat-headless-react": "^0.9.3",
+    "@yext/chat-ui-react": "^0.11.4",
+    "@yext/pages-components": "1.0.4",
+    "@yext/search-headless-react": "^2.5.0-beta.4",
+    "@yext/search-ui-react": "^1.7.0-beta.4",
+    "@yext/types": "0.1.13-alpha",
+    "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
+    "font-awesome": "^4.7.0",
+    "install": "^0.13.0",
+    "jsforce": "^3.6.4",
+    "mapbox-gl": "^3.8.0",
+    "npm": "^10.9.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-markdown": "^9.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "@types/react": "^18.3.14",
+    "@types/react-dom": "^18.3.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "@yext/pages": "1.1.5",
+    "autoprefixer": "^10.4.20",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "generate-license-file": "^3.6.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.10"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  }
+}

@@ -1,0 +1,26 @@
+buildConfiguration:
+  buildCommand: npm run build:local
+  installDependenciesStep:
+    command: npm install
+    requiredFiles:
+      - package.json
+      - package-lock.json
+      - .npmrc
+livePreviewConfiguration:
+  setupCommand: ":"
+siteStream:
+  id: site-entity
+  fields:
+    - name
+    - c_header
+    - c_footer
+    - c_image
+    - c_primaryColor
+    - c_secondaryColor
+    - c_themeColor
+    - c_accentColor
+  localization:
+    locales:
+      - en
+    primary: false
+  entityId: "636945287581367878"
