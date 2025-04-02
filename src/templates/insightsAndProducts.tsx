@@ -15,7 +15,6 @@ import ResponseComponent from "../components/ResponseComponent";
 import RelatedData from "../components/relatedData";
 import { format_date } from "../utils/reusableFunctions";
 import ScrollToTop from "../components/scrollToTop";
-import Team from "../components/relatedSections/Team";
 
 export const config: TemplateConfig = {
   stream: {
@@ -26,9 +25,7 @@ export const config: TemplateConfig = {
       "meta",
       "name",
       "slug",
-      "emails",
       "c_image",
-      "address",
       "c_shortDescriptionV2",
       "shortDescriptionV2",
       "bodyV2",
@@ -50,24 +47,9 @@ export const config: TemplateConfig = {
       "datePosted",
       "c_parentEntityType",
       "c_category",
-      "c_relatedProfessionals.id",
-      "c_relatedProfessionals.name",
-      "c_relatedProfessionals.mainPhone",
-      "c_relatedProfessionals.emails",
-      "c_relatedProfessionals.headshot",
-      "c_relatedProfessionals.slug",
-      "c_relatedProfessionals.address",
-      "c_relatedProfessionals.address.city",
-      "c_relatedProfessionals.c_relatedBlogs.id",
-      "c_relatedProfessionals.c_relatedBlogs.name",
-      "c_relatedProfessionals.c_relatedBlogs.primaryPhoto",
-      "c_relatedProfessionals.c_relatedBlogs.emails",
-      "c_relatedProfessionals.c_relatedBlogs.bodyV2",
-      "c_relatedProfessionals.c_relatedBlogs.slug",
-      "c_relatedProfessionals.c_relatedBlogs.datePosted",
     ],
     filter: {
-      entityTypes: ["taxonomy_specialty"],
+      entityTypes: ["ce_blog", "product"],
       savedFilterIds: ["1401364440"],
     },
     localization: {
@@ -115,11 +97,8 @@ const InsightsAndProducts: Template<TemplateRenderProps> = ({ document }) => {
     _site,
     name,
     c_image,
-    hours
     c_shortDescriptionV2,
-    mainPhone,
     bodyV2,
-    emails,
     richTextDescriptionV2,
     primaryPhoto,
     shortDescriptionV2,
@@ -130,27 +109,7 @@ const InsightsAndProducts: Template<TemplateRenderProps> = ({ document }) => {
     datePosted,
     c_parentEntityType,
     c_category,
-    address,
-    c_relatedProfessionals,
   } = document;
-
-
-  const professionalLocations = [
-    {
-      address: address,
-      hours: hours,
-      mainPhone: mainPhone,
-      name: address.city,
-      yextDisplayCoordinate: yextDisplayCoordinate,
-      slug: "#",
-    },
-    ...(Array.isArray(c_relatedLocations)
-      ? c_relatedLocations
-      : [c_relatedLocations]),
-  ];
-
-
-
 
   return (
     <PageLayout _site={_site} templateData={{ __meta, document }}>
@@ -245,17 +204,6 @@ const InsightsAndProducts: Template<TemplateRenderProps> = ({ document }) => {
                 <RelatedData relatedData={c_relatedBlogs} name={name} />
               )}
             </aside>
-
-
-            {c_relatedProfessionals && (
-        <Team
-          title={"Meet Our Team"}
-          people={c_relatedProfessionals}
-          parentEntityName={`${address.city}, ${address.region}`}
-        />
-      )}
-
-
             <footer className="md:pb-6 md:hidden block">
               <Cta
                 cta={{ link: "", linkType: "Phone", label: "Call us" }}
@@ -263,7 +211,6 @@ const InsightsAndProducts: Template<TemplateRenderProps> = ({ document }) => {
                 otherStyles={"rounded-full"}
               />
             </footer>
-
           </section>
         </section>
       </article>
